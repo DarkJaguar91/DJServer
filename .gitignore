@@ -1,0 +1,11 @@
+# Project exclude paths
+/.gradle/
+/build/
+/common/build/
+/common/build/classes/kotlin/jvm/main/
+/server/build/
+/web/build/
+/web/build/classes/kotlin/main/
+/.idea/
+/gradle/
+gradlew*
