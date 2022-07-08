@@ -3,6 +3,7 @@ package views
 import com.brandontalbot.djserver.sonarr.model.Series
 import csstype.*
 import emotion.react.css
+import getServerAddress
 import kotlinx.browser.window
 import kotlinx.coroutines.await
 import kotlinx.coroutines.launch
@@ -18,7 +19,7 @@ import react.router.useParams
 import react.useEffect
 import react.useState
 
-suspend fun getSeries(id: Long) = window.fetch("http://127.0.0.1:8080/sonarr/series/$id")
+suspend fun getSeries(id: Long) = window.fetch("${getServerAddress()}/sonarr/series/$id")
     .await()
     .text()
     .await()

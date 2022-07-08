@@ -4,6 +4,7 @@ import com.brandontalbot.djserver.sonarr.model.Series
 import components.SeriesCard
 import csstype.*
 import emotion.react.css
+import getServerAddress
 import kotlinx.browser.window
 import kotlinx.coroutines.await
 import kotlinx.coroutines.launch
@@ -18,7 +19,7 @@ import react.useEffectOnce
 import react.useState
 
 suspend fun getSonarrSeries(): List<Series> {
-    val response = window.fetch("http://127.0.0.1:8080/sonarr/series")
+    val response = window.fetch("${getServerAddress()}/sonarr/series")
         .await()
         .text()
         .await()

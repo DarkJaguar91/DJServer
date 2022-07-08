@@ -20,7 +20,7 @@ tasks {
         childProjects["server"]!!.tasks.named<Copy>("processResources") {
             from(jsBrowserDistribution)
         }
-        val serverZip = childProjects["server"]!!.tasks.named("distZip")
+        val serverZip = childProjects["server"]!!.tasks.named("distTar")
         dependsOn()
         from(serverZip)
         from("./docker")
